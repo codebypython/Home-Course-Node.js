@@ -1,0 +1,63 @@
+/**
+ * 03_web_events_simulator/css/variables.css
+ * HỆ THỐNG DESIGN TOKENS & CHUẨN PHÂN LỚP Z-INDEX LAYERS
+ * 
+ * PHÂN TÍCH THIẾT KẾ:
+ * 1. Bảng màu Dark Mode Glassmorphism hiện đại: Charcoal Dark (#0B0F19), Cyan Neon (#00F2FE), Violet (#4FACFE).
+ * 2. Hệ thống Z-Index Layer chuẩn hóa để tránh lỗi đè hiển thị:
+ *    - Layer Matrix Background: -1
+ *    - Layer Base Layout: 0
+ *    - Layer Interactive Playground: 10
+ *    - Layer Floating Dashboard: 100
+ *    - Layer Backdrop Glass: 500
+ *    - Layer Modal Window: 1000
+ *    - Layer Notification Toast: 9000
+ */
+
+:root {
+    /* 🎨 COLOR PALETTE (DARK MODE GLASSMORPHISM) */
+    --bg-dark: #0b0f19;
+    --bg-card: rgba(18, 26, 43, 0.7);
+    --bg-card-hover: rgba(28, 40, 65, 0.85);
+    --bg-glass: rgba(15, 23, 42, 0.75);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --border-active: #00f2fe;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+
+    /* ACCENT COLORS FOR 10 EVENT GROUPS */
+    --accent-mouse: #00f2fe;
+    --accent-keyboard: #4facfe;
+    --accent-touch: #a855f7;
+    --accent-form: #3b82f6;
+    --accent-drag: #10b981;
+    --accent-window: #f59e0b;
+    --accent-ui: #ec4899;
+    --accent-media: #ef4444;
+    --accent-network: #14b8a6;
+    --accent-custom: #8b5cf6;
+
+    /* 🧱 Z-INDEX LAYER STACK HIERARCHY */
+    --layer-matrix: -1;
+    --layer-base: 0;
+    --layer-playground: 10;
+    --layer-floating: 100;
+    --layer-backdrop: 500;
+    --layer-modal: 1000;
+    --layer-toast: 9000;
+
+    /* 📐 TYPOGRAPHY & SPACING */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Fira Code', 'Consolas', monospace;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* SHADOWS & GLOWS */
+    --shadow-glow: 0 0 20px rgba(0, 242, 254, 0.25);
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}

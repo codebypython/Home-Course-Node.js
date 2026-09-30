@@ -1,0 +1,4 @@
+{"timestamp":"2026-08-03T05:42:44.960Z","level":"INFO","message":"Hệ thống Server khởi động thành công.","metadata":{"port":3000,"env":"development"}}
+{"timestamp":"2026-08-03T05:42:44.964Z","level":"WARN","message":"Cảnh báo bộ nhớ RAM sử dụng vượt quá 75%.","metadata":{"memoryUsage":"78%"}}
+{"timestamp":"2026-08-03T05:42:44.965Z","level":"ERROR","message":"Thất bại khi kết nối tới Database MySQL.","metadata":{"errorCode":"ECONNREFUSED"}}
+{"timestamp":"2026-08-03T05:42:44.966Z","level":"INFO","message":"Người dùng Admin thực hiện đăng nhập thành công.","metadata":{"userId":"admin_01"}}

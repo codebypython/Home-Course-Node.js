@@ -1,0 +1,345 @@
+/**
+ * 03_web_events_simulator/css/components.css
+ * CHI TIẾT ĐỊNH DẠNG TỪNG COMPONENT VÀ HIỆU ỨNG TƯƠNG TÁC
+ */
+
+/* ==========================================
+ * 🎯 COMPONENT 1: 100 EVENT GRID CARDS
+ * ========================================== */
+.event-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    max-height: 380px;
+    overflow-y: auto;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    user-select: none;
+    text-align: center;
+}
+
+.event-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.event-card .event-id {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.event-card .event-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 4px;
+    word-break: break-word;
+}
+
+/* Glowing active state when event triggers */
+.event-card.active-trigger {
+    background: rgba(0, 242, 254, 0.2) !important;
+    border-color: var(--accent-mouse) !important;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+    transform: scale(1.05);
+}
+
+/* Group Badge Colors */
+.event-card[data-group="mouse"] { border-left: 3px solid var(--accent-mouse); }
+.event-card[data-group="keyboard"] { border-left: 3px solid var(--accent-keyboard); }
+.event-card[data-group="touch"] { border-left: 3px solid var(--accent-touch); }
+.event-card[data-group="form"] { border-left: 3px solid var(--accent-form); }
+.event-card[data-group="drag"] { border-left: 3px solid var(--accent-drag); }
+.event-card[data-group="window"] { border-left: 3px solid var(--accent-window); }
+.event-card[data-group="ui"] { border-left: 3px solid var(--accent-ui); }
+.event-card[data-group="media"] { border-left: 3px solid var(--accent-media); }
+.event-card[data-group="network"] { border-left: 3px solid var(--accent-network); }
+.event-card[data-group="custom"] { border-left: 3px solid var(--accent-custom); }
+
+/* ==========================================
+ * 🎨 COMPONENT 2: INTERACTIVE PLAYGROUND
+ * ========================================== */
+.playground-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.interactive-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 160px;
+}
+
+.interactive-box h4 {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.touch-canvas-area {
+    height: 100px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--border-glass);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    cursor: crosshair;
+    user-select: none;
+}
+
+/* Drag & Drop Target Boxes */
+.drag-zone-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.drag-item {
+    padding: 8px 14px;
+    background: linear-gradient(135deg, var(--accent-drag), #059669);
+    border-radius: var(--radius-sm);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: grab;
+    user-select: none;
+}
+
+.drop-target {
+    flex: 1;
+    height: 40px;
+    border: 2px dashed var(--border-glass);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.drop-target.drag-over {
+    border-color: var(--accent-drag);
+    background: rgba(16, 185, 129, 0.15);
+}
+
+/* Form Inputs */
+.form-control-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    outline: none;
+}
+
+.form-control-input:focus {
+    border-color: var(--accent-mouse);
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+}
+
+/* Custom Buttons */
+.btn-action {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-action:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent-mouse), var(--accent-keyboard));
+    border: none;
+    color: #000;
+    font-weight: 700;
+}
+
+/* ==========================================
+ * 📟 COMPONENT 3: REAL-TIME CONSOLE LOG STREAM
+ * ========================================== */
+.console-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 700px;
+}
+
+.console-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-glass);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.console-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.console-body {
+    flex: 1;
+    padding: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: rgba(5, 8, 15, 0.95);
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+}
+
+.log-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--text-muted);
+}
+
+.log-time { color: var(--text-muted); font-size: 0.7rem; }
+.log-event { font-weight: 600; color: var(--accent-mouse); }
+.log-target { color: var(--text-secondary); }
+
+/* ==========================================
+ * 🪟 COMPONENT 4: MODAL LAYER INSPECTOR (Z-INDEX 1000)
+ * ========================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: var(--layer-backdrop);
+    display: none;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.modal-backdrop.show {
+    display: block;
+    opacity: 1;
+}
+
+.modal-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: 600px;
+    background: #0f172a;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    z-index: var(--layer-modal);
+    padding: 24px;
+    display: none;
+    transition: transform var(--transition-normal);
+}
+
+.modal-window.show {
+    display: block;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.layer-stack-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.layer-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+ * 🔔 COMPONENT 5: GLOBAL TOAST (Z-INDEX 9000)
+ * ========================================== */
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: var(--layer-toast);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast-message {
+    padding: 12px 20px;
+    background: rgba(15, 23, 42, 0.95);
+    border-left: 4px solid var(--accent-mouse);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    pointer-events: auto;
+    animation: toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}

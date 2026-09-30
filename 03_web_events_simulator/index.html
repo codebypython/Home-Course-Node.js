@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Web Events Simulator - Layer & Component Architecture</title>
+    <meta name="description" content="Ứng dụng mô phỏng 100 sự kiện tương tác web chuẩn Frontend với hệ thống phân lớp Layer Z-Index và Reusable Components.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- LAYER -1: MATRIX BACKGROUND -->
+    <canvas id="layer-matrix-bg"></canvas>
+
+    <!-- LAYER 0: MAIN BASE APP CONTAINER -->
+    <div id="app-container">
+        
+        <!-- HEADER COMPONENT -->
+        <header class="main-header" id="header-root"></header>
+
+        <!-- MAIN WORKSPACE -->
+        <main class="main-workspace">
+            
+            <!-- LAYER 10: PLAYGROUND & EVENT GRID SECTION -->
+            <section class="playground-section">
+                
+                <div>
+                    <h3 class="section-title">🎮 Interactive Playground <span style="font-weight:400; font-size:0.8rem; color:var(--text-muted);">(Khu Vực Tương Tác Thực Tế - Layer 10)</span></h3>
+                    <div id="playground-root"></div>
+                </div>
+
+                <div>
+                    <h3 class="section-title">📊 100 Web Event Status Matrix <span style="font-weight:400; font-size:0.8rem; color:var(--text-muted);">(100 Thẻ Sự Kiện Nhấp Nháy Khi Trigger)</span></h3>
+                    <div class="event-grid-container" id="event-grid-root"></div>
+                </div>
+
+            </section>
+
+            <!-- LAYER 100: LIVE CONSOLE FLOATING SECTION -->
+            <aside class="console-section" id="console-root"></aside>
+
+        </main>
+
+    </div>
+
+    <!-- MAIN APP SCRIPT -->
+    <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

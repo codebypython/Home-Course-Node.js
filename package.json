@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-learning-roadmap",
+  "version": "1.0.0",
+  "description": "Lộ trình học tập JavaScript và Node.js từ con số 0 đến lập trình viên Backend chuyên nghiệp",
+  "main": "02_practical_code/module_05_web_server/app.js",
+  "scripts": {
+    "start": "node 02_practical_code/module_05_web_server/app.js",
+    "start:web": "node 03_web_events_simulator/server.js",
+    "test:m1": "node 02_practical_code/module_01_fundamentals/gradeCalculator.js",
+    "test:m2": "node 02_practical_code/module_02_data_processing/cartProcessor.js",
+    "test:m3": "node 02_practical_code/module_03_async_tasks/asyncFetcher.js",
+    "test:m4": "node 02_practical_code/module_04_nodejs_cli/logManager.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
